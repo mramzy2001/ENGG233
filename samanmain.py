@@ -1,6 +1,6 @@
 # import fileIO
-import TemperatureData
-import WeatherAnalyzer
+import matplotlib as pyplot
+import numpy as np
 
 
 # import Date
