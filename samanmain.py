@@ -8,6 +8,7 @@ import numpy as np
 
 
 def menu():
+    filePath = input("Enter the directory to your file")
     choices = [
         '1- Get Minimum Temperature of 1990-2019',
         '2- Get Maximum Temperature of 1990-2019',
