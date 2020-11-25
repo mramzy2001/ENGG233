@@ -13,11 +13,11 @@ class WeatherAnalyzer:
 
         for i in range(0, len(minTempList)):
 
-            min_year_i = numpy.min(minTempList[i])
+            min_year_i = np.min(minTempList[i])
 
             minAnnually.append(min_year_i)
 
-        return numpy.min(minAnnually)
+        return np.min(minAnnually)
 
     def getMinTempAnnually(self):
         
@@ -26,7 +26,7 @@ class WeatherAnalyzer:
 
         for i in range(0, len(minTempList)):
 
-            min_year_i = numpy.min(minTempList[i])
+            min_year_i = np.min(minTempList[i])
 
             minAnnually.append(min_year_i)
         
@@ -39,11 +39,11 @@ class WeatherAnalyzer:
 
         for i in range(0, len(maxTempList)):
 
-            max_year_i = numpy.max(maxTempList[i])
+            max_year_i = np.max(maxTempList[i])
 
             maxAnnually.append(max_year_i)
         
-        return numpy.max(maxAnnually)
+        return np.max(maxAnnually)
 
     def getMaxTempAnnually(self):
         
@@ -52,7 +52,7 @@ class WeatherAnalyzer:
 
         for i in range(0, len(maxTempList)):
 
-            max_year_i = numpy.max(maxTempList[i])
+            max_year_i = np.max(maxTempList[i])
 
             maxAnnually.append(max_year_i)
         
@@ -65,7 +65,7 @@ class WeatherAnalyzer:
 
         for i in range(0, len(snowFall)):
 
-            avg_year_i = numpy.average(snowFall[i])
+            avg_year_i = np.average(snowFall[i])
 
             avgSnowFallAnnually.append(avg_year_i)
 
@@ -81,10 +81,10 @@ class WeatherAnalyzer:
 
             for i in range(0, len(maxTemp)):
                 
-                avgMax_i = numpy.average(maxTemp[i])
-                avgMin_i = numpy.average(minTemp[i])
+                avgMax_i = np.average(maxTemp[i])
+                avgMin_i = np.average(minTemp[i])
 
-                avg_i = numpy.average([avgMax_i, avgMin_i])
+                avg_i = np.average([avgMax_i, avgMin_i])
 
                 avgTempAnnually.append(avg_i)
         
