@@ -21,60 +21,6 @@ class TemperatureData:
         self.maxTemperature = maxTemperature
         self.snowFall = snowFall
 
-class WeatherAnalyzer:
-    def __init__(self, temp_list):
-        self.temp_list = temp_list
-
-    def getMinTemp(self):
-        min_list = []
-        for i in range(len(self.temp_list)):
-            min_list.append(self.temp_list[i].minTemperature)
-        
-        return print(min(min_list))
-
-    def getMinTempAnnually(self):
-        monthly_mintemp = [ ]
-        annual_mintemp = [ ]
-
-        for i in range(len(self.temp_list)):
-            if i == len(self.temp_list) - 1:
-                monthly_mintemp.append(self.temp_list[i].minTemperature)
-                annual_mintemp.append(min(monthly_mintemp))
-
-            elif self.temp_list[i].date.year == self.temp_list[i+1].date.year:
-                monthly_mintemp.append(self.temp_list[i].minTemperature)
-            
-            else:
-                monthly_mintemp.append(self.temp_list[i].minTemperature)
-                annual_mintemp.append(min(monthly_mintemp))
-                monthly_mintemp = [ ]
-        return print(annual_mintemp)
-
-    def getMaxTemp(self):
-        max_list = []
-        for i in range(len(self.temp_list)):
-            max_list.append(self.temp_list[i].maxTemperature)
-        
-        return print(max(max_list))
-
-    def getMaxTempAnnually(self):
-            monthly_maxtemp = [ ]
-            annual_maxtemp = [ ]
-
-            for i in range(len(self.temp_list)):
-                if i == len(self.temp_list) - 1:
-                    monthly_maxtemp.append(self.temp_list[i].maxTemperature)
-                    annual_maxtemp.append(max(monthly_maxtemp))
-
-                elif self.temp_list[i].date.year == self.temp_list[i+1].date.year:
-                    monthly_maxtemp.append(self.temp_list[i].maxTemperature)
-                
-                else:
-                    monthly_maxtemp.append(self.temp_list[i].maxTemperature)
-                    annual_maxtemp.append(max(monthly_maxtemp))
-                    monthly_maxtemp = [ ]
-            return print(annual_maxtemp)
-
 class Chart:
     def __init__(self, x, y, title, xlabel, ylabel):
         self.x = x
@@ -102,21 +48,3 @@ class Chart:
         pyplot.title(self.title)
 
         pyplot.show
-
-def main():
-    filepath = FileIO("ProjectMilestone1/CalgaryWeather.csv")
-
-    array = filepath.get_dataTable()
-    
-    dates = []
-    temp_data = []
-
-    for i in range(len(array)):
-        dates.append(Date(array[i][1], array[i][0]))
-        temp_data.append(TemperatureData(dates[i], array[i][2], array[i][3], array[i][4]))
-    
-    temp_analyzer = WeatherAnalyzer(temp_data)
-    print(temp_data[0].snowFall)
-
-    
-main()
