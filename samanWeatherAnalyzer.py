@@ -1,6 +1,3 @@
-import numpy
-
-
 class WeatherAnalyzer:
     
     def __init__(self, minTemp, maxTemp, snowFall):
